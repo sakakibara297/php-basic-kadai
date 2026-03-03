@@ -13,9 +13,9 @@
 
 function sort_2way($array, $order)
 {
-    if ($order == "TRUE") {
+    if ($order == TRUE) {
         sort($array);
-    } else if ($order == "FALSE") {
+    } else if ($order == FALSE) {
         rsort($array);
     }
     return $array;
@@ -25,14 +25,14 @@ $nums = [15, 4, 18, 23, 10];
 
 // 昇順にソート
 echo "昇順にソートします。<br>";
-$sorted_nums_TRUE = sort_2way($nums, "TRUE");
+$sorted_nums_TRUE = sort_2way($nums, TRUE);
 foreach ($sorted_nums_TRUE as $num) {
     echo $num . "<br>";
 }
 
 // 降順にソート
 echo "降順にソートします。<br>";
-$sorted_nums_FALSE = sort_2way($nums, "FALSE");
+$sorted_nums_FALSE = sort_2way($nums, FALSE);
 foreach ($sorted_nums_FALSE as $num) {
     echo $num . "<br>";
 }
