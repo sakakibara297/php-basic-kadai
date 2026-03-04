@@ -1,70 +1,53 @@
-<!DOCTYPE html>
-<html lang="ja">
+<?php
+// Foodクラスを定義
+class Food {
+    private $name;
+    private $price;
 
-<head>
-   <meta charset="UTF-8">
-   <title>PHP基礎編</title>
-</head>
+    // コンストラクタでプロパティに値をセット
+    public function __construct(string $name, int $price) {
+        $this->name = $name;
+        $this->price = $price;
+    }
 
-<body>
-   <p>
-       <?php
-        
-                // クラスを定義する
-        class Food {
-            // プロパティを定義する                        
-            private $name;
-            private $price;
+    // priceの値を出力するメソッド
+    public function show_price() {
+        echo $this->price;
+    }
+}
 
-            // コンストラクタを定義する
-            public function __construct(string $name, int $price,) {
-                $this->name = $name;
-                $this->price = $price;
-            }
-        }
+// Animalクラスを定義
+class Animal {
+    private $name;
+    private $height;
+    private $weight;
 
-        // インスタンス化する
-        $show_price = new Food('potat
-        o', 250,);
+    // コンストラクタでプロパティに値をセット
+    public function __construct(string $name, int $height, int $weight) {
+        $this->name = $name;
+        $this->height = $height;
+        $this->weight = $weight;
+    }
 
-        // インスタンス$userの各プロパティの値を出力する
-        print_r($show_price);
+    // heightの値を出力するメソッド
+    public function show_height() {
+        echo $this->height;
+    }
+}
 
+// FoodクラスとAnimalクラスのインスタンスを作成
+$food = new Food('potato', 250);
+$animal = new Animal('dog', 60, 5000);
 
-          // クラスを定義する
-        class Animal {
-            // プロパティを定義する                        
-            private $name;
-            private $height;
-            private $weight;
+// インスタンスの中身をprint_rで出力
+print_r($food);
+echo "<br>";
+print_r($animal);
+echo "<br>";
 
-            // コンストラクタを定義する
-            public function __construct(string $name, int $height,int $weight,) {
-                $this->name = $name;
-                $this->height = $height;
-                $this->weight = $weight;
-            }
-        }
-
-        // インスタンス化する
-        $show_Animal = new Animal('dog
-        ', 60, 5000);
-
-        // インスタンス$userの各プロパティの値を出力する
-        print_r($show_Animal);
-
-
-
-
-
-
-
-
-
-
-       ?>
-   </p>
-</body>
-
-</html>
+// それぞれのメソッドの実行結果を出力
+$food->show_price();
+echo "<br>";
+$animal->show_height();
+?>
 
